@@ -1,0 +1,153 @@
+:root{
+    --azul_body: rgb(196, 208, 219);
+    --azul2_cabeca: rgb(209, 233, 255);
+    --azul_gerador: rgb(228, 242, 255);
+    --azul_escuro: rgb(37, 72, 105);
+}
+
+body{
+    background-color: var(--azul_body);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bloco-entrada{
+    width: 80%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: var(--azul2_cabeca);
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+.bloco-entrada h1{
+    font-weight: 600;
+    font-size: 1.9rem;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    letter-spacing: 0.3px;
+    color: var(--azul_escuro);
+}
+
+
+#form-envio {
+  background-color: var(--azul_gerador);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: row;
+  gap: 10px; /* Espaçamento uniforme entre os campos */
+  max-width: 1200px;
+  margin: 0 auto 20px auto; /* Centraliza o formulário e dá margem inferior */
+}
+
+/* Estilo dos Rótulos (Labels) */
+#form-envio label {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--azul_escuro);
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Estilo dos Inputs e Selects */
+#form-envio input[type="text"]{
+  width: 200px;
+  padding: 5px 5px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#form-envio select {
+  width: 85px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Efeito ao clicar/focar no campo */
+#form-envio input[type="text"]:focus,
+#form-envio select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Botão de Adicionar */
+#form-envio button[type="submit"] {
+  background-color: var(--azul_escuro);
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Efeito de hover e clique no botão */
+#form-envio button[type="submit"]:hover {
+  background-color: rgb(39, 117, 189);;
+}
+
+#form-envio button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+.bloco-gerador{
+    width: 80%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: var(--azul_gerador);
+    padding-top: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#tabela-geradora {
+    border: 2px solid black;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 2px solid black;
+}
+
+
+#tabela-geradora td:first-child{
+    width: 100px;
+    border-right: 3px solid black;
+}
+#tabela-geradora td{
+    border: 2px solid black;
+    width: 200px;
+}
+
+#tabela-geradora th {
+  background-color: var(--azul2_cabeca);
+  color: var(--azul_escuro);
+  padding: 8px 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.12rem;
+  letter-spacing: 0.3px;
+  border: 1px solid black;
+}
