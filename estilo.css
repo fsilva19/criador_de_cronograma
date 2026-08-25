@@ -38,6 +38,8 @@ body{
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: wrap;
   gap: 10px; /* Espaçamento uniforme entre os campos */
   max-width: 1200px;
   margin: 0 auto 20px auto; /* Centraliza o formulário e dá margem inferior */
@@ -49,7 +51,6 @@ body{
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--azul_escuro);
-  margin-bottom: 4px;
   display: block;
 }
 
@@ -65,10 +66,18 @@ body{
   box-sizing: border-box;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
+/* Grupo interno: coloca o label e a caixa lado a lado */
+.box-grupo {
+  display: flex;
+  flex-direction: row;     /* Força alinhamento horizontal */
+  align-items: center;     /* Centraliza verticalmente o texto com o campo */
+  gap: 8px;                /* Espaço entre o texto e a caixa */
+}
 
 #form-envio select {
   width: 85px;
   border: 1px solid #cbd5e1;
+  padding: 5px 5px;
   border-radius: 6px;
   font-size: 0.95rem;
   color: #1e293b;
@@ -119,26 +128,29 @@ body{
 }
 
 #tabela-geradora {
-    border: 2px solid black;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
     overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-collapse: collapse;
+    margin-bottom: 30px;
 }
 
-th, td{
-    border: 2px solid black;
+#tabela-geradora td{
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    vertical-align: center;
 }
-
 
 #tabela-geradora td:first-child{
     width: 100px;
-    border-right: 3px solid black;
-}
-#tabela-geradora td{
-    border: 2px solid black;
-    width: 200px;
+    text-align: center;
+    vertical-align: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--azul_escuro);
 }
 
 #tabela-geradora th {
@@ -149,5 +161,101 @@ th, td{
   text-transform: uppercase;
   font-size: 1.12rem;
   letter-spacing: 0.3px;
-  border: 1px solid black;
+}
+
+table td, th, tr{
+  border: 1px solid var(--azul_body);
+}
+
+/*Checkbox de seleção dos dias*/
+/* Container relativo para servir de referência de posicionamento */
+.dropdown-dias {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  width: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #1e293b;
+  background-color: white;
+  border: 1px solid #cbd5e1;
+  padding: 5px 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.dropdown-btn .seta {
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+/* Painel suspenso (caixa flutuante que fica sobreposta) */
+.dropdown-conteudo {
+  display: none; /* Escondido por padrão */
+  position: absolute;
+  top: calc(100% + 4px); /* Posição logo abaixo do botão */
+  left: 0;
+  background-color: var(--azul_gerador);
+  border: 1px solid var(--azul_escuro);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  z-index: 1000; /* Força ficar por cima dos outros elementos da tela */
+}
+
+/* Classe ativada via JS para mostrar o painel */
+.dropdown-dias.ativo .dropdown-conteudo {
+  display: block;
+}
+
+.dropdown-dias.ativo .dropdown-btn .seta {
+  transform: rotate(180deg);
+}
+
+/* Estilo dos botões de dia na horizontal */
+.seletor-dias {
+  display: flex;
+  gap: 6px;
+}
+
+.seletor-dias input[type="checkbox"] {
+  display: none;
+}
+
+
+.seletor-dias label {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--azul_body);
+  color: #e8eaed ;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.seletor-dias label:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.seletor-dias input[type="checkbox"]:checked + label {
+  background-color: rgb(67, 118, 148);
+  color: rgb(255, 255, 255) !important; 
+  box-shadow: 0 2px 13px rgba(0, 0, 0, 0.35);
 }

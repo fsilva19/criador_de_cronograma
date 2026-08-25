@@ -6,30 +6,69 @@
     <link rel="stylesheet" href="estilo.css">
     <script src="criador_de_cronograma.js" defer></script>
     <title>Gerador de Cronograma</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗓️</text></svg>">
+    
 </head>
 <body>
     <div class="bloco-entrada">
         <h1>GERADOR DE CRONOGRAMA</h1>
         <div class="secao-entrada">
             <form id="form-envio">
-                <label for="horario-aula">Horário da aula</label>
-                <select name="horario-aula" id="horario-aula">
-                    <option value="07:00 - 08:00">M12</option>
-                    <option value="08:00 - 09:00">M34</option>
-                    <option value="09:00 - 10:00">M56</option>
-                </select>
-                <label for="dia-semana">Dia da semana</label>
-                <select name="dia-semana" id="dia-semana">
-                    <option value="segunda">S</option>
-                    <option value="terça">T</option>
-                    <option value="quarta">Q</option>
-                    <option value="quinta">Q</option>
-                    <option value="sexta">S</option>
-                </select>
-                <label for="nome-disciplina">Nome da Disciplina</label>
-                <input type="text" id="nome-disciplina">
-                <label for="abreviacao-disciplina">Abreviação</label>
-                <input type="text" id="abreviacao-disciplina">
+                <div class="box-grupo">
+                    <label for="horario-aula">Horário da aula</label>
+                    <select name="horario-aula" id="horario-aula">
+                        <option value="07:00 - 08:40">M12</option>
+                        <option value="08:50 - 10:30">M34</option>
+                        <option value="10:40 - 12:20">M56</option>
+                        <option value="13:00 - 14:40">T12</option>
+                        <option value="14:50 - 16:30">T34</option>
+                        <option value="16:40 - 18:20">T56</option>
+                    </select>
+                </div>
+
+                <div class="box-grupo">
+                    <label>Dias da semana:</label>
+  
+                    <!-- Container do Dropdown Customizado -->
+                    <div class="dropdown-dias">
+                        <!-- Botão principal do seletor -->
+                        <button type="button" class="dropdown-btn" id="btn-dias">
+                        <span>----</span>
+                        <span class="seta">▼</span>
+                        </button>
+
+                        <!-- Caixinha flutuante com as opções (sobreposta) -->
+                        <div class="dropdown-conteudo" id="menu-dias">
+                        <div class="seletor-dias">
+                            <input type="checkbox" id="dia-seg" name="dias" value="segunda">
+                            <label for="dia-seg">S</label>
+
+                            <input type="checkbox" id="dia-ter" name="dias" value="terça">
+                            <label for="dia-ter">T</label>
+
+                            <input type="checkbox" id="dia-qua" name="dias" value="quarta">
+                            <label for="dia-qua">Q</label>
+
+                            <input type="checkbox" id="dia-qui" name="dias" value="quinta">
+                            <label for="dia-qui">Q</label>
+
+                            <input type="checkbox" id="dia-sex" name="dias" value="sexta">
+                            <label for="dia-sex">S</label>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-grupo">
+                    <label for="nome-disciplina">Nome da Disciplina</label>
+                    <input type="text" id="nome-disciplina">
+                </div>
+
+                <div class="box-grupo">
+                    <label for="abreviacao-disciplina">Abreviação</label>
+                    <input type="text" id="abreviacao-disciplina">
+                </div>
+
                 <button type="submit" id="bt-adicionar">Adicionar</button>
             </form>
             
